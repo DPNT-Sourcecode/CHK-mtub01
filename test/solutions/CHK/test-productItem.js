@@ -140,20 +140,18 @@ describe('Checkout Challenge: Product Item', function () {
 		const price = 40
 		const offer = '2E get one E free'
 		const product = new productItem.ProductItem(sku, price, offer)
-		const expectedReduction = [{
+		const expectedReduction = {
 			perPrice: price*2 / 3,
 			quantity: 3,
 			totalPrice: price*2
-		}]
+		}
 		assert.equal(product.sku, sku);
 		assert.equal(product.price, price);
 		assert.equal(product.offer, offer)
 		assert.notEqual(product.reduction, null)
 
+		assert.equal(product.reduction[0].perPrice, expectedReduction.perPrice)
 		assert.equal(product.reduction[0].quantity, expectedReduction.quantity)
 		assert.equal(product.reduction[0].totalPrice, expectedReduction.totalPrice)
-		assert.notEqual(product.reduction[0].free, null)
-		assert.equal(product.reduction[0].free.quantity, expectedReduction.free.quantity)
-		assert.equal(product.reduction[0].free.sku, expectedReduction.free.sku)
 	});
 });
