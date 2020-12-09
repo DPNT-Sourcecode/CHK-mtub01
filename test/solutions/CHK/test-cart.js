@@ -107,16 +107,17 @@ describe('Checkout Challenge: add to cart', function() {
 		const cartObj=new cart.Cart()
 		skus.forEach((sku)=>{
 			const product=Stock.get(sku)
-			cartObj.addToCart(bProduct,2)
+			cartObj.addToCart(product,2)
 		})
 		
-		cartObj.addToCart(eProduct,5)
 		const newCartObj=new cart.Cart()
 		newCartObj.setProducts(cartObj.getCartItems())
 		newCartObj.getNormalizedCartItem()
-		const productBCartNew=newCartObj.getItemSku(bProduct.sku)
-		const productBCart=cartObj.getItemSku(eProduct.sku)
-		assert.notEqual(productBCartNew.quantity,productBCart.quantity)
+		const productXCartNew=newCartObj.getItemSku('X')
+		const productXCart=cartObj.getItemSku('X')
+		assert.notEqual(productXCartNew.quantity,productXCart.quantity)
+		console.log(newCartObj)
+		assert.equal(productXCartNew.quantity,1)
 		
 	});
 });
