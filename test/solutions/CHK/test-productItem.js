@@ -58,4 +58,31 @@ describe('Checkout Challenge: Product Item', function() {
 		assert.equal(product.reduction[0].quantity,expectedReduction.quantity)
 		assert.equal(product.reduction[0].totalPrice,expectedReduction.totalPrice)
 	});
+	it('should create multiple reduction object for product offer', function() {
+		const sku='A'
+		const price=50
+		const offer='3A for 130, 5A for 200'
+		const product=new productItem.ProductItem(sku,price,offer)
+		const expectedReduction=[
+		{
+			perPrice:200/5,
+			quantity:5,
+			totalPrice:200
+		},{
+			perPrice:130/3,
+			quantity:3,
+			totalPrice:130
+		}
+	]
+		assert.equal(product.sku, sku);
+		assert.equal(product.price, price);
+		assert.equal(product.offer,offer)
+		assert.notEqual(product.reduction,null)
+		assert.equal(product.reduction[0].perPrice,expectedReduction[0].perPrice)
+		assert.equal(product.reduction[0].quantity,expectedReduction[0].quantity)
+		assert.equal(product.reduction[0].totalPrice,expectedReduction[0].totalPrice)
+		assert.equal(product.reduction[1].perPrice,expectedReduction[1].perPrice)
+		assert.equal(product.reduction[1].quantity,expectedReduction[1].quantity)
+		assert.equal(product.reduction[1].totalPrice,expectedReduction[1].totalPrice)
+	});
 });
