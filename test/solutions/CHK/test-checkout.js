@@ -56,7 +56,8 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 		{sku:'E',count:2,expectedPrice:80},
 		{sku:'F',count:3,expectedPrice:20},
 		{sku:'H',count:16,expectedPrice:80+45+10},
-		{sku:'K',count:3,expectedPrice:150+80},
+		{sku:'K',count:3,expectedPrice:120+70},
+		{sku:'N',count:3,expectedPrice:120},
 		]
 		const totalValue=items.reduce((a,b)=>{return a+b.expectedPrice},0)
 		let skuString=''
