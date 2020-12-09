@@ -116,8 +116,9 @@ describe('Checkout Challenge: add to cart', function() {
 		const productXCartNew=newCartObj.getItemSku('X')
 		const productXCart=cartObj.getItemSku('X')
 		assert.notEqual(productXCartNew.quantity,productXCart.quantity)
-		console.log(newCartObj)
+		const productSCartNew=newCartObj.getItemSku('S')
 		assert.equal(productXCartNew.quantity,1)
+		assert.equal(productSCartNew.product.totalPrice,45*3)
 		
 	});
 });
