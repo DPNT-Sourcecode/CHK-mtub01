@@ -14,4 +14,23 @@ describe('Checkout Challenge: add to cart', function() {
 		assert.equal(productsInCart[0].quantity, 1);
 		assert.equal(productsInCart[0].product.sku, product.sku);
 	});
+	it('should return 2 for SKU A', function() {
+		const product={sku:'A',price:'50'}
+		const cartObj=new cart.Cart()
+		cartObj.addToCart(product)
+		cartObj.addToCart(product)
+		const productsInCart=cartObj.getCartItems()
+		assert.equal(productsInCart.length, 1);
+		assert.equal(productsInCart[0].quantity, 2);
+		assert.equal(productsInCart[0].product.sku, product.sku);
+	});
+	it('should return 5 for SKU A', function() {
+		const product={sku:'A',price:'50'}
+		const cartObj=new cart.Cart()
+		cartObj.addToCart(product,5)
+		const productsInCart=cartObj.getCartItems()
+		assert.equal(productsInCart.length, 1);
+		assert.equal(productsInCart[0].quantity, 5);
+		assert.equal(productsInCart[0].product.sku, product.sku);
+	});
 });
