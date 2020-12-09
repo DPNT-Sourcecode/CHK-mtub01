@@ -4,7 +4,7 @@ var it = mocha.it
 var assert = require('assert');
 const products = require('../../../lib/solutions/CHK/products');
 
-describe('Checkout Challenge: Get Product List', function() {
+describe('Checkout Challenge: Product List', function() {
 	it('should be able to add products', function() {
 		const productList=new products.Products()
 		productList.add('newProduct')
@@ -18,6 +18,18 @@ describe('Checkout Challenge: Get Product List', function() {
 		})
 		const productDetails=productList.all()
 		assert.equal(productDetails.length, productItems.length);
+		productDetails.forEach((data,i)=>{
+			assert.equal(data,productItems[i]);
+		})
+	});
+	it('should return get product by sku', function() {
+		const productItems=[{sku:'A',price:'20'},{sku:'B',price:'20'},{sku:'C',price:'20'}]
+		const productList=new products.Products()
+		productItems.forEach((p)=>{
+			productList.add(p)
+		})
+		const productDetail=productList.get(productItems[0].sku)
+		assert.equal(productDetail, productItems[0].sku);
 		productDetails.forEach((data,i)=>{
 			assert.equal(data,productItems[i]);
 		})
