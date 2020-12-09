@@ -95,7 +95,8 @@ describe('Checkout Challenge: add to cart', function() {
 		const cartObj=new cart.Cart()
 		cartObj.addToCart(bProduct,5)
 		cartObj.addToCart(eProduct,5)
-		const newCartObj=new cart.Cart(cartObj.products)
+		const newCartObj=new cart.Cart()
+		newCartObj.setProducts(cartObj.getCartItems())
 		assert.equal(newCartObj.products,cartObj.products)
 		
 	});
