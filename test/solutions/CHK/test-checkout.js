@@ -51,4 +51,16 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 		console.log('----',items)
 	    assert.equal(checkout(items), totalValue);
 	});
+	it('should check multiple Products combination with offer', function() {
+		const items=[{sku:'A',count:8,expectedPrice:330},
+		{sku:'B',count:2,expectedPrice:30},
+		{sku:'E',count:2,expectedPrice:80},
+		{sku:'F',count:3,expectedPrice:20},
+		{sku:'H',count:16,expectedPrice:80+45+10},
+		{sku:'K',count:3,expectedPrice:150+80},
+		]
+		const totalValue=items.reduce((a,b)=>{return a+b.expectedPrice},0)
+		console.log('----',items)
+	    assert.equal(checkout(items), totalValue);
+	});
 });
