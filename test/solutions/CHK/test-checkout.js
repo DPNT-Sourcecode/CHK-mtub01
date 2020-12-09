@@ -3,7 +3,7 @@ var describe = mocha.describe
 var it = mocha.it
 var assert = require('assert');
 const checkout = require('../../../lib/solutions/CHK/checkout');
-
+const products = require('../../../lib/solutions/CHK/data/products.json');
 describe('Checkout Challenge: calculate checkout amount', function() {
 	it('should return 0, if empty string or null', function() {
 	    assert.equal(checkout(''), 0);
@@ -44,5 +44,11 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 	});
 	it('should return 410, if 7A1B2E4F  in inputString', function() {
 	    assert.equal(checkout('AAAAAAABEEFFFF'), 410);
+	});
+	it('should check all Products single', function() {
+		const items=products.map((m)=>{return m.sku}).join('')
+		const totalValue=products.reduce((a,b)=>{return a+b.price},0)
+		console.log('----',items)
+	    assert.equal(checkout(items), totalValue);
 	});
 });
