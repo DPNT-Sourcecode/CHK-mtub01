@@ -36,9 +36,9 @@ describe('Checkout Challenge: Product Item', function() {
 		assert.equal(product.price, price);
 		assert.equal(product.offer,offer)
 		assert.notEqual(product.reduction,null)
-		assert.equal(product.reduction.perPrice,expectedReduction.perPrice)
-		assert.equal(product.reduction.quantity,expectedReduction.quantity)
-		assert.equal(product.reduction.totalPrice,expectedReduction.totalPrice)
+		assert.equal(product.reduction[0].perPrice,expectedReduction.perPrice)
+		assert.equal(product.reduction[0].quantity,expectedReduction.quantity)
+		assert.equal(product.reduction[0].totalPrice,expectedReduction.totalPrice)
 	});
 	it('should create reduction object with perPrice:35 totalPrice:140 quantity:4', function() {
 		const sku='B'
@@ -54,8 +54,8 @@ describe('Checkout Challenge: Product Item', function() {
 		assert.equal(product.price, price);
 		assert.equal(product.offer,offer)
 		assert.notEqual(product.reduction,null)
-		assert.equal(product.reduction.perPrice,expectedReduction.perPrice)
-		assert.equal(product.reduction.quantity,expectedReduction.quantity)
-		assert.equal(product.reduction.totalPrice,expectedReduction.totalPrice)
+		assert.equal(product.reduction[0].perPrice,expectedReduction.perPrice)
+		assert.equal(product.reduction[0].quantity,expectedReduction.quantity)
+		assert.equal(product.reduction[0].totalPrice,expectedReduction.totalPrice)
 	});
 });
