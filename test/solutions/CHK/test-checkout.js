@@ -48,7 +48,6 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 	it('should check all Products single', function() {
 		const items=products.map((m)=>{return m.sku}).join('')
 		const totalValue=products.reduce((a,b)=>{return a+b.price},0)
-		console.log('----',items)
 	    assert.equal(checkout(items), totalValue);
 	});
 	it('should check multiple Products combination with offer', function() {
@@ -60,7 +59,6 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 		{sku:'K',count:3,expectedPrice:150+80},
 		]
 		const totalValue=items.reduce((a,b)=>{return a+b.expectedPrice},0)
-		console.log('----',items)
 		let skuString=''
 		items.forEach((item)=>{
 			 skuString+=item.sku.repeat(item.count)

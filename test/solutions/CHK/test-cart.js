@@ -68,7 +68,6 @@ describe('Checkout Challenge: add to cart', function() {
 		cartObj.addToCart(bProduct,5)
 		cartObj.addToCart(eProduct,2)
 		const normalized=cartObj.getNormalizedCartItem()
-		console.log('---',normalized)
 		const productsInCart=cartObj.getItemSku(bProduct.sku)
 		const productECart=cartObj.getItemSku(eProduct.sku)
 		assert.equal(productsInCart.quantity, 4);
@@ -82,7 +81,6 @@ describe('Checkout Challenge: add to cart', function() {
 		cartObj.addToCart(bProduct,5)
 		cartObj.addToCart(eProduct,5)
 		const normalized=cartObj.getNormalizedCartItem()
-		console.log('---',normalized)
 		const productsInCart=cartObj.getItemSku(bProduct.sku)
 		const productECart=cartObj.getItemSku(eProduct.sku)
 		assert.equal(productsInCart.quantity, 3);
