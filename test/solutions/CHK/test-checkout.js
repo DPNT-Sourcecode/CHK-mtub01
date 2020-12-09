@@ -71,12 +71,31 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 		
 	   
 	});
-	it('should have total Value 156 with all buy any products x 2', function() {
+	it('should have total Value 152 with all buy any products x 2', function() {
 		const items=[{sku:'S',count:2,expectedPrice:135},
 		{sku:'T',count:2,expectedPrice:0},
-		{sku:'X',count:2,expectedPrice:21},
+		{sku:'X',count:2,expectedPrice:17},
 		{sku:'Y',count:2,expectedPrice:0},
 		{sku:'Z',count:2,expectedPrice:0}
+		]
+		const totalValue=items.reduce((a,b)=>{return a+b.expectedPrice},0)
+		console.log(totalValue)
+		let skuString=''
+		items.forEach((item)=>{
+			 skuString+=item.sku.repeat(item.count)
+			
+
+		})
+		assert.equal(checkout(skuString), totalValue);
+		
+	   
+	});
+	it('should have total Value 152 with all buy any products x 2', function() {
+		const items=[{sku:'S',count:1,expectedPrice:45},
+		{sku:'T',count:1,expectedPrice:0},
+		{sku:'X',count:1,expectedPrice:17},
+		{sku:'Y',count:1,expectedPrice:20},
+		{sku:'Z',count:1,expectedPrice:0}
 		]
 		const totalValue=items.reduce((a,b)=>{return a+b.expectedPrice},0)
 		console.log(totalValue)
