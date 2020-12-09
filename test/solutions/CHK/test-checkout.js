@@ -46,4 +46,3 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 	    assert.equal(checkout('AAAAAAABEEFFFF'), 410);
 	});
 });
-
