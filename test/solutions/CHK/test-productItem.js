@@ -27,8 +27,17 @@ describe('Checkout Challenge: Product Item', function() {
 		const price=50
 		const offer='3A for 130'
 		const product=new productItem.ProductItem(sku,price,offer)
+		const expectedReduction={
+			perPrice:43.33,
+			quantity:3,
+			totalPrice:130
+		}
 		assert.equal(product.sku, sku);
 		assert.equal(product.price, price);
 		assert.equal(product.offer,offer)
+		assert.notEqual(product.reduction,null)
+		assert.equal(product.reduction.perPrice,expectedReduction.perPrice)
+		assert.equal(product.reduction.quantity,expectedReduction.quantity)
+		assert.equal(product.reduction.totalPrice,expectedReduction.totalPrice)
 	});
 });
