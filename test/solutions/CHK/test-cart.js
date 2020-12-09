@@ -101,4 +101,22 @@ describe('Checkout Challenge: add to cart', function() {
 		assert.notEqual(productBCartNew.quantity,productBCart.quantity)
 		
 	});
+	it('should be proper for buy any', function() {
+		const Stock = require('../../../lib/solutions/CHK/stock').Stock
+		const skus=['S','T','X','Y','Z']
+		const cartObj=new cart.Cart()
+		skus.forEach((sku)=>{
+			const product=Stock.get(sku)
+			cartObj.addToCart(bProduct,2)
+		})
+		
+		cartObj.addToCart(eProduct,5)
+		const newCartObj=new cart.Cart()
+		newCartObj.setProducts(cartObj.getCartItems())
+		newCartObj.getNormalizedCartItem()
+		const productBCartNew=newCartObj.getItemSku(bProduct.sku)
+		const productBCart=cartObj.getItemSku(eProduct.sku)
+		assert.notEqual(productBCartNew.quantity,productBCart.quantity)
+		
+	});
 });
