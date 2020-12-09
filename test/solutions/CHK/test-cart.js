@@ -88,4 +88,15 @@ describe('Checkout Challenge: add to cart', function() {
 		assert.equal(productsInCart.quantity, 3);
 		assert.equal(productECart.quantity, 1);
 	});
+	it('should return copy of cart', function() {
+		const Stock = require('../../../lib/solutions/CHK/stock').Stock
+		const bProduct=Stock.get('B')
+		const eProduct=Stock.get('E')
+		const cartObj=new cart.Cart()
+		cartObj.addToCart(bProduct,5)
+		cartObj.addToCart(eProduct,5)
+		const newCartObj=new cart.Cart(cartObj.products)
+		assert.equal(newCartObj.products,cartObj.products)
+		
+	});
 });
