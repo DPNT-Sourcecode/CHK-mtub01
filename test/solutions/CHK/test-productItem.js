@@ -102,9 +102,37 @@ describe('Checkout Challenge: Product Item', function() {
 		
 		assert.equal(product.reduction[0].quantity,expectedReduction.quantity)
 		assert.equal(product.reduction[0].totalPrice,expectedReduction.totalPrice)
-		console.log('--',product.reduction[0])
 		assert.notEqual(product.reduction[0].free,null)
 		assert.equal(product.reduction[0].free.quantity,expectedReduction.free.quantity)
 		assert.equal(product.reduction[0].free.sku,expectedReduction.free.sku)
+	});
+	it('should create multiple reduction object for product offer free and multipack mix', function() {
+		const sku='A'
+		const price=50
+		const offer='3A for 130, 2E get one B free'
+		const product=new productItem.ProductItem(sku,price,offer)
+		const expectedReduction=[
+		{
+			perPrice:200/5,
+			quantity:5,
+			totalPrice:200
+		},{
+			quantity:2,
+			totalPrice:price*2,
+			free:{sku:'B',quantity:1}
+		}
+	]
+		assert.equal(product.sku, sku);
+		assert.equal(product.price, price);
+		assert.equal(product.offer,offer)
+		assert.notEqual(product.reduction,null)
+		assert.equal(product.reduction[0].perPrice,expectedReduction[0].perPrice)
+		assert.equal(product.reduction[0].quantity,expectedReduction[0].quantity)
+		assert.equal(product.reduction[0].totalPrice,expectedReduction[0].totalPrice)
+		assert.equal(product.reduction[1].quantity,expectedReduction[1].quantity)
+		assert.equal(product.reduction[1].totalPrice,expectedReduction[1].totalPrice)
+		assert.notEqual(product.reduction[1].free,null)
+		assert.equal(product.reduction[1].free.quantity,expectedReduction[1].free.quantity)
+		assert.equal(product.reduction[1].free.sku,expectedReduction[1].free.sku)
 	});
 });
