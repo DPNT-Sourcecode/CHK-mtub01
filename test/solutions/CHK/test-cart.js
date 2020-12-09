@@ -3,7 +3,7 @@ var describe = mocha.describe
 var it = mocha.it
 var assert = require('assert');
 const cart = require('../../../lib/solutions/CHK/cart');
-
+const Stock = require('../../../lib/solutions/CHK/stock').Stock
 describe('Checkout Challenge: add to cart', function() {
 	it('should return 1 for SKU A add', function() {
 		const product={sku:'A',price:'50'}
