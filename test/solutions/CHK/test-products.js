@@ -10,8 +10,16 @@ describe('Checkout Challenge: Get Product List', function() {
 		productList.add('newProduct')
 		assert.equal(productList.products[0], 'newProduct');
 	});
-	// it('should return all products', function() {
-	// 	const productDetails=products.all()
-	//     assert.equal(productDetails.length, 4);
-	// });
+	it('should return all products', function() {
+		const products=['A','B','C','D']
+		const productList=new products.Products()
+		products.forEach((p)=>{
+			productList.add(p)
+		})
+		const productDetails=productList.all()
+		assert.equal(productDetails.length, products.length);
+		productDetails.forEach((data,i)=>{
+			assert.equal(data,products[i]);
+		})
+	});
 });
