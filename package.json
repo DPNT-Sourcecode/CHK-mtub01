@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "properties-reader": "0.0.15",
-    "tdl-client-nodejs": "0.26.3"
+    "tdl-client-nodejs": "0.26.3",
+    "words-to-numbers": "^1.5.1"
   },
   "devDependencies": {
     "diveSync": "0.3.0",
@@ -36,3 +37,4 @@
   },
   "homepage": "https://github.com/julianghionoiu/tdl-warmup#readme"
 }
+
