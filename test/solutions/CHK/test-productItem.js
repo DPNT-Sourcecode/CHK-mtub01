@@ -85,4 +85,22 @@ describe('Checkout Challenge: Product Item', function() {
 		assert.equal(product.reduction[1].quantity,expectedReduction[1].quantity)
 		assert.equal(product.reduction[1].totalPrice,expectedReduction[1].totalPrice)
 	});
+	it('should create reduction object with freeItem, 2E get one B free', function() {
+		const sku='E'
+		const price=40
+		const offer='2E get one B free'
+		const product=new productItem.ProductItem(sku,price,offer)
+		const expectedReduction={
+			quantity:2,
+			totalPrice:price*2,
+			free:{freeItem:'B',freeQuantity:1}
+		}
+		assert.equal(product.sku, sku);
+		assert.equal(product.price, price);
+		assert.equal(product.offer,offer)
+		assert.notEqual(product.reduction,null)
+		assert.equal(product.reduction[0].perPrice,expectedReduction.perPrice)
+		assert.equal(product.reduction[0].quantity,expectedReduction.quantity)
+		assert.equal(product.reduction[0].totalPrice,expectedReduction.totalPrice)
+	});
 });
