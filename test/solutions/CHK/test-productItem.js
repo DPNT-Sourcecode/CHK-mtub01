@@ -169,8 +169,9 @@ describe('Checkout Challenge: Product Item', function () {
 		assert.equal(product.offer, offer)
 		assert.notEqual(product.reduction, null)
 
-		assert.equal(product.reduction[0].group, expectedReduction.group)
+		assert.equal(product.reduction[0].group.length, expectedReduction.group.length)
 		assert.equal(product.reduction[0].quantity, expectedReduction.quantity)
 		assert.equal(product.reduction[0].totalPrice, expectedReduction.totalPrice)
 	});
 });
+
