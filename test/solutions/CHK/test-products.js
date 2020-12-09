@@ -22,16 +22,22 @@ describe('Checkout Challenge: Product List', function() {
 			assert.equal(data,productItems[i]);
 		})
 	});
-	it('should return get product by sku', function() {
+	it('should return product by sku', function() {
 		const productItems=[{sku:'A',price:'20'},{sku:'B',price:'20'},{sku:'C',price:'20'}]
 		const productList=new products.Products()
 		productItems.forEach((p)=>{
 			productList.add(p)
 		})
 		const productDetail=productList.get(productItems[0].sku)
-		assert.equal(productDetail, productItems[0].sku);
-		productDetails.forEach((data,i)=>{
-			assert.equal(data,productItems[i]);
+		assert.equal(productDetail, productItems[0]);
+	});
+	it('should return null for no product', function() {
+		const productItems=[{sku:'A',price:'20'},{sku:'B',price:'20'},{sku:'C',price:'20'}]
+		const productList=new products.Products()
+		productItems.forEach((p)=>{
+			productList.add(p)
 		})
+		const productDetail=productList.get('D')
+		assert.equal(productDetail, null);
 	});
 });
