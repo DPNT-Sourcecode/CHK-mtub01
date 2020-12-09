@@ -9,7 +9,26 @@ describe('Checkout Challenge: Product Item', function() {
 		const sku='A'
 		const price=50
 		const product=new productItem.ProductItem(sku,price)
-		productList.add('newProduct')
-		assert.equal(productList.products[0], 'newProduct');
+		assert.equal(product.sku, sku);
+		assert.equal(product.price, price);
+		assert.equal(product.offer,null)
+	});
+	it('should init a productItem Object with only price , sku and offer', function() {
+		const sku='A'
+		const price=50
+		const offer='3A for 130'
+		const product=new productItem.ProductItem(sku,price,offer)
+		assert.equal(product.sku, sku);
+		assert.equal(product.price, price);
+		assert.equal(product.offer,offer)
+	});
+	it('should create reduction object for product offer', function() {
+		const sku='A'
+		const price=50
+		const offer='3A for 130'
+		const product=new productItem.ProductItem(sku,price,offer)
+		assert.equal(product.sku, sku);
+		assert.equal(product.price, price);
+		assert.equal(product.offer,offer)
 	});
 });
