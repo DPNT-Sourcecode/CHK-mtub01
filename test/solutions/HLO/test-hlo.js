@@ -8,4 +8,7 @@ describe('HLO challenge: say Hello World', function() {
 	it('should return Hello World', function() {
 	    assert.equal(hello(), "Hello, World!");
 	});
+	it('should return Hello John', function() {
+	    assert.equal(hello('John'), "Hello, John!");
+	});
 });
