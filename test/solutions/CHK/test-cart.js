@@ -51,13 +51,13 @@ describe('Checkout Challenge: add to cart', function() {
 		const productsInCart=cartObj.getCartItems()
 		assert.equal(productsInCart.length, 0);
 	});
-	it('should return null for SKU A after remove cart', function() {
+	it('should return 2 for SKU B after get item', function() {
 		const product={sku:'A',price:'50'}
 		const product2={sku:'B',price:'30'}
 		const cartObj=new cart.Cart()
 		cartObj.addToCart(product,5)
 		cartObj.addToCart(product2,2)
-		const productsInCart=cartObj.getCartItems()
-		assert.equal(productsInCart.length, 0);
+		const productsInCart=cartObj.getItemSku(product2.sku)
+		assert.equal(productsInCart.quantity, 2);
 	});
 });
