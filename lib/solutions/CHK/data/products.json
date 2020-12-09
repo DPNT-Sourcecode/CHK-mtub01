@@ -11,11 +11,13 @@
     },
     {
         "sku": "C",
-        "price": 20
+        "price": 20,
+        "offer": ""
     },
     {
         "sku": "D",
-        "price": 15
+        "price": 15,
+        "offer": ""
     },
     {
         "sku": "E",
@@ -29,7 +31,8 @@
     },
     {
         "sku": "G",
-        "price": 20
+        "price": 20,
+        "offer": ""
     },
     {
         "sku": "H",
@@ -38,24 +41,28 @@
     },
     {
         "sku": "I",
-        "price": 35
+        "price": 35,
+        "offer": ""
     },
     {
         "sku": "J",
-        "price": 60
+        "price": 60,
+        "offer": ""
     },
     {
         "sku": "K",
-        "price": 80,
-        "offer": "2K for 150"
+        "price": 70,
+        "offer": "2K for 120"
     },
     {
         "sku": "L",
-        "price": 90
+        "price": 90,
+        "offer": ""
     },
     {
         "sku": "M",
-        "price": 15
+        "price": 15,
+        "offer": ""
     },
     {
         "sku": "N",
@@ -64,7 +71,8 @@
     },
     {
         "sku": "O",
-        "price": 10
+        "price": 10,
+        "offer": ""
     },
     {
         "sku": "P",
@@ -83,11 +91,13 @@
     },
     {
         "sku": "S",
-        "price": 30
+        "price": 20,
+        "offer": "buy any 3 of (S,T,X,Y,Z) for 45"
     },
     {
         "sku": "T",
-        "price": 20
+        "price": 20,
+        "offer": "buy any 3 of (S,T,X,Y,Z) for 45"
     },
     {
         "sku": "U",
@@ -101,18 +111,22 @@
     },
     {
         "sku": "W",
-        "price": 20
+        "price": 20,
+        "offer": ""
     },
     {
         "sku": "X",
-        "price": 90
+        "price": 17,
+        "offer": "buy any 3 of (S,T,X,Y,Z) for 45"
     },
     {
         "sku": "Y",
-        "price": 10
+        "price": 20,
+        "offer": "buy any 3 of (S,T,X,Y,Z) for 45"
     },
     {
         "sku": "Z",
-        "price": 50
+        "price": 21,
+        "offer": "buy any 3 of (S,T,X,Y,Z) for 45"
     }
 ]
