@@ -102,8 +102,9 @@ describe('Checkout Challenge: Product Item', function() {
 		
 		assert.equal(product.reduction[0].quantity,expectedReduction.quantity)
 		assert.equal(product.reduction[0].totalPrice,expectedReduction.totalPrice)
+		console.log(product.reduction[0])
 		assert.notEqual(product.reduction[0].free,null)
-		assert.notEqual(product.reduction[0].free.quantity,expectedReduction.free.quantity)
-		assert.notEqual(product.reduction[0].free.sku,expectedReduction.free.sku)
+		assert.equal(product.reduction[0].free.quantity,expectedReduction.free.quantity)
+		assert.equal(product.reduction[0].free.sku,expectedReduction.free.sku)
 	});
 });
