@@ -61,6 +61,14 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 		]
 		const totalValue=items.reduce((a,b)=>{return a+b.expectedPrice},0)
 		console.log('----',items)
-	    assert.equal(checkout(items), totalValue);
+		let skuString=''
+		items.forEach((item)=>{
+			 skuString+=item.sku.repeat(item.count)
+			
+
+		})
+		assert.equal(checkout(skuString), totalValue);
+		
+	   
 	});
 });
