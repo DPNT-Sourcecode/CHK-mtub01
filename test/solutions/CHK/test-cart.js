@@ -3,7 +3,7 @@ var describe = mocha.describe
 var it = mocha.it
 var assert = require('assert');
 const cart = require('../../../lib/solutions/CHK/cart');
-const Stock = require('../../../lib/solutions/CHK/stock').Stock
+
 describe('Checkout Challenge: add to cart', function() {
 	it('should return 1 for SKU A add', function() {
 		const product={sku:'A',price:'50'}
@@ -61,6 +61,7 @@ describe('Checkout Challenge: add to cart', function() {
 		assert.equal(productsInCart.quantity, 2);
 	});
 	it('should return 4 for SKU B after normalized', function() {
+		const Stock = require('../../../lib/solutions/CHK/stock').Stock
 		const bProduct=Stock.get('B')
 		const eProduct=Stock.get('E')
 		const cartObj=new cart.Cart()
@@ -71,6 +72,20 @@ describe('Checkout Challenge: add to cart', function() {
 		const productsInCart=cartObj.getItemSku(bProduct.sku)
 		const productECart=cartObj.getItemSku(eProduct.sku)
 		assert.equal(productsInCart.quantity, 4);
-		assert.equal(productsInCart.quantity, 4);
+		assert.equal(productECart.quantity, 0);
+	});
+	it('should return 3 for SKU B and 1 for E after normalized', function() {
+		const Stock = require('../../../lib/solutions/CHK/stock').Stock
+		const bProduct=Stock.get('B')
+		const eProduct=Stock.get('E')
+		const cartObj=new cart.Cart()
+		cartObj.addToCart(bProduct,5)
+		cartObj.addToCart(eProduct,5)
+		const normalized=cartObj.getNormalizedCartItem()
+		console.log('---',normalized)
+		const productsInCart=cartObj.getItemSku(bProduct.sku)
+		const productECart=cartObj.getItemSku(eProduct.sku)
+		assert.equal(productsInCart.quantity, 3);
+		assert.equal(productECart.quantity, 1);
 	});
 });
