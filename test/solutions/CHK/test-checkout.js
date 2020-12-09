@@ -8,4 +8,7 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 	it('should return -1, if empty string or null', function() {
 	    assert.equal(checkout(''), -1);
 	});
+	it('should return 20, if C in inputString', function() {
+	    assert.equal(checkout('C'), -1);
+	});
 });
