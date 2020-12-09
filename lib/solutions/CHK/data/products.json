@@ -1,0 +1,118 @@
+[
+    {
+        "sku": "A",
+        "price": 50,
+        "offer": "3A for 130, 5A for 200"
+    },
+    {
+        "sku": "B",
+        "price": 30,
+        "offer": "2B for 45"
+    },
+    {
+        "sku": "C",
+        "price": 20
+    },
+    {
+        "sku": "D",
+        "price": 15
+    },
+    {
+        "sku": "E",
+        "price": 40,
+        "offer": "2E get one B free"
+    },
+    {
+        "sku": "F",
+        "price": 10,
+        "offer": "2F get one F free"
+    },
+    {
+        "sku": "G",
+        "price": 20
+    },
+    {
+        "sku": "H",
+        "price": 10,
+        "offer": "5H for 45, 10H for 80"
+    },
+    {
+        "sku": "I",
+        "price": 35
+    },
+    {
+        "sku": "J",
+        "price": 60
+    },
+    {
+        "sku": "K",
+        "price": 80,
+        "offer": "2K for 150"
+    },
+    {
+        "sku": "L",
+        "price": 90
+    },
+    {
+        "sku": "M",
+        "price": 15
+    },
+    {
+        "sku": "N",
+        "price": 40,
+        "offer": "3N get one M free"
+    },
+    {
+        "sku": "O",
+        "price": 10
+    },
+    {
+        "sku": "P",
+        "price": 50,
+        "offer": "5P for 200"
+    },
+    {
+        "sku": "Q",
+        "price": 30,
+        "offer": "3Q for 80"
+    },
+    {
+        "sku": "R",
+        "price": 50,
+        "offer": "3R get one Q free"
+    },
+    {
+        "sku": "S",
+        "price": 30
+    },
+    {
+        "sku": "T",
+        "price": 20
+    },
+    {
+        "sku": "U",
+        "price": 40,
+        "offer": "3U get one U free"
+    },
+    {
+        "sku": "V",
+        "price": 50,
+        "offer": "2V for 90, 3V for 130"
+    },
+    {
+        "sku": "W",
+        "price": 20
+    },
+    {
+        "sku": "X",
+        "price": 90
+    },
+    {
+        "sku": "Y",
+        "price": 10
+    },
+    {
+        "sku": "Z",
+        "price": 50
+    }
+]
