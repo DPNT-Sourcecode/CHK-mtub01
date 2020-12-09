@@ -60,4 +60,14 @@ describe('Checkout Challenge: add to cart', function() {
 		const productsInCart=cartObj.getItemSku(product2.sku)
 		assert.equal(productsInCart.quantity, 2);
 	});
+	it('should return 4 for SKU B after normalized', function() {
+		const bProduct=Stock.get('B')
+		const eProduct=Stock.get('E')
+		const cartObj=new cart.Cart()
+		cartObj.addToCart(bProduct,5)
+		cartObj.addToCart(eProduct,2)
+		cartObj.getNormalizedCartItem()
+		const productsInCart=cartObj.getItemSku(bProduct.sku)
+		assert.equal(productsInCart.quantity, 4);
+	});
 });
