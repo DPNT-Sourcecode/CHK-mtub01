@@ -28,7 +28,7 @@ describe('Checkout Challenge: Product Item', function() {
 		const offer='3A for 130'
 		const product=new productItem.ProductItem(sku,price,offer)
 		const expectedReduction={
-			perPrice:43.33,
+			perPrice:130/3,
 			quantity:3,
 			totalPrice:130
 		}
