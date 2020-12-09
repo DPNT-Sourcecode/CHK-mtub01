@@ -11,7 +11,10 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 	it('should return 20, if C in inputString', function() {
 	    assert.equal(checkout('C'), 20);
 	});
-	it('should return 50, if AC in inputString', function() {
-	    assert.equal(checkout('AC'), 50);
+	it('should return 70, if AC in inputString', function() {
+	    assert.equal(checkout('AC'), 70);
+	});
+	it('should return -1, if AM in inputString', function() {
+	    assert.equal(checkout('AM'), -1);
 	});
 });
