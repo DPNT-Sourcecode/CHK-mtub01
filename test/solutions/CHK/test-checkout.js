@@ -36,8 +36,7 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 	it('should return 160, if 4E  in inputString', function() {
 	    assert.equal(checkout('EEEE'), 160);
 	});
-	it('should return 235, if 5B5E  in inputString', function() {
-		const value=45+30+200
-	    assert.equal(checkout('EEEEEBBBBB'), value);
+	it('should return 20, if 3F  in inputString', function() {
+	    assert.equal(checkout('FFF'), 20);
 	});
 });

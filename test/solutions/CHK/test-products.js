@@ -29,7 +29,7 @@ describe('Checkout Challenge: Product List', function() {
 			productList.add(p)
 		})
 		const productDetail=productList.get(productItems[0].sku)
-		assert.equal(productDetail, productItems[0]);
+		assert.equal(productDetail.sku, productItems[0].sku);
 	});
 	it('should return null for no product', function() {
 		const productItems=[{sku:'A',price:'20'},{sku:'B',price:'20'},{sku:'C',price:'20'}]
