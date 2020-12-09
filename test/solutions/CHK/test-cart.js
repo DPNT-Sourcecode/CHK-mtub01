@@ -97,7 +97,10 @@ describe('Checkout Challenge: add to cart', function() {
 		cartObj.addToCart(eProduct,5)
 		const newCartObj=new cart.Cart()
 		newCartObj.setProducts(cartObj.getCartItems())
-		assert.equal(newCartObj.products,cartObj.products)
+		newCartObj.getNormalizedCartItem()
+		const productBCartNew=newCartObj.getItemSku(bProduct.sku)
+		const productBCart=cartObj.getItemSku(eProduct.sku)
+		assert.notEqual(productBCartNew.quantity,productBCart.quantity)
 		
 	});
 });
