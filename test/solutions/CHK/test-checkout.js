@@ -5,8 +5,8 @@ var assert = require('assert');
 const checkout = require('../../../lib/solutions/CHK/checkout');
 
 describe('Checkout Challenge: calculate checkout amount', function() {
-	it('should return -1, if empty string or null', function() {
-	    assert.equal(checkout(''), -1);
+	it('should return 0, if empty string or null', function() {
+	    assert.equal(checkout(''), 0);
 	});
 	it('should return 20, if C in inputString', function() {
 	    assert.equal(checkout('C'), 20);
@@ -19,5 +19,8 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 	});
 	it('should return -1, if AxA in inputString', function() {
 	    assert.equal(checkout('AxA'), -1);
+	});
+	it('should return -1, if AAA in inputString', function() {
+	    assert.equal(checkout('AAA'), 130);
 	});
 });
