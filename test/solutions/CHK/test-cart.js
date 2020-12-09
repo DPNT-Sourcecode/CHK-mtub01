@@ -101,7 +101,7 @@ describe('Checkout Challenge: add to cart', function() {
 		assert.notEqual(productBCartNew.quantity,productBCart.quantity)
 		
 	});
-	it('should be proper for buy any', function() {
+	it('should have quantity 1 for X and totalPrice for S 135', function() {
 		const Stock = require('../../../lib/solutions/CHK/stock').Stock
 		const skus=['S','T','X','Y','Z']
 		const cartObj=new cart.Cart()
@@ -119,6 +119,23 @@ describe('Checkout Challenge: add to cart', function() {
 		const productSCartNew=newCartObj.getItemSku('S')
 		assert.equal(productXCartNew.quantity,1)
 		assert.equal(productSCartNew.product.totalPrice,45*3)
+		
+	});
+	it('should have quantity 2 for S', function() {
+		const Stock = require('../../../lib/solutions/CHK/stock').Stock
+		const skus=['S']
+		const cartObj=new cart.Cart()
+		skus.forEach((sku)=>{
+			const product=Stock.get(sku)
+			cartObj.addToCart(product,2)
+		})
+		
+		const newCartObj=new cart.Cart()
+		newCartObj.setProducts(cartObj.getCartItems())
+		newCartObj.getNormalizedCartItem()
+		const productSCartNew=newCartObj.getItemSku('S')
+		assert.equal(productSCartNew.quantity,2)
+		assert.equal(productSCartNew.product.totalPrice,0)
 		
 	});
 });
