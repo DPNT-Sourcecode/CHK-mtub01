@@ -174,4 +174,3 @@ describe('Checkout Challenge: Product Item', function () {
 		assert.equal(product.reduction[0].totalPrice, expectedReduction.totalPrice)
 	});
 });
-
