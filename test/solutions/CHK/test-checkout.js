@@ -28,6 +28,6 @@ describe('Checkout Challenge: calculate checkout amount', function() {
 	    assert.equal(checkout('AAAAAAAA'), 330);
 	});
 	it('should return 330, if 7A1B  in inputString', function() {
-	    assert.equal(checkout('AAAAAAAA'), 330);
+	    assert.equal(checkout('AAAAAAAB'), 330);
 	});
 });
